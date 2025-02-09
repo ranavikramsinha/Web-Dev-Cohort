@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+    --primary-blue: #3b82f6;
+    --primary-blue-dark: #2563eb;
+    --gray-800: #1f2937;
+    --neutral-400: #9ca3af;
+    --neutral-900: #111827;
+  
+    /* Dark mode variables */
+    --bg-dark: #111827;
+    --text-dark: #ffffff;
+    --border-dark: #374151;
+  }
+
+  .dark {
+    background-color: #111827;
+    color: #fff;
+}
+
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+  }
+
+  .dark-mode-toggle{
+    margin-top: 2.5rem;
+    margin-left: 82.5%;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--primary-blue-dark);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 0.6rem;
+    font-weight: semibold;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .dark-mode-toggle:hover{
+    transform: scale(1.05);
+    background-color: var(--primary-blue);
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 98rem;
+  }
+
+
+  .content-col h1 {
+    font-size: 6.5rem;
+  }
+  
+  .content-col p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: var(--neutral-900);
+    font-weight: 500;
+  }
+  
+  .dark .content-col p {
+    color: var(--text-dark);
+  }
+  
+  .cta-group {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .sr-only {
+    display: none;
+  }
+  
+  .input-wrapper {
+    border: none;
+  }
+  
+  input[type='text'] {
+    padding: 1rem 8rem 1rem 1.2rem;
+    border: 0.1rem solid var(--neutral-400);
+    border-radius: 0.6rem;
+    font-weight: semibold;
+    font-size: 1.2rem;
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  input[type='text']:focus {
+    color: #4b515d;
+    border: 1px solid #B8B6B6;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  
+  .demo-button {
+    background-color: var(--primary-blue);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    font-weight: semibold;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .demo-button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-blue-dark);
+  }
+  
+  .brands-section {
+    margin-top: 5rem;
+  }
+  
+  .trusted-by {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .brand-logos {
+    margin-top: 1.3rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .brand-logo {
+    width: 8rem;
+    height: 3rem;
+  }
+  
+  .image-col {
+    border-radius: 0.6rem;
+  }
+  
+  .hero-image {
+    width: 49rem;
+    border-radius: 1rem;
+  }
+  
+/* Small screens (640px and below) */
+@media (max-width: 640px) {
+  .hero-grid {
+      grid-template-columns: 1fr;
+      width: 100%;
+      padding: 0 1rem;
+  }
+
+  .content-col h1 {
+      font-size: 4rem;
+  }
+
+  .cta-group {
+      flex-direction: column;
+  }
+
+  .hero-image {
+      width: 100%;
+      height: auto;
+  }
+
+  .dark-mode-toggle {
+      margin: 2.5rem auto;
+      display: block;
+  }
+
+  .brand-logos {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .hero-grid {
+      grid-template-columns: 1fr;
+      width: 90%;
+  }
+
+  .content-col h1 {
+      font-size: 5.5rem;
+  }
+
+  .hero-image {
+      width: 100%;
+      max-width: 49rem;
+      margin: 0 auto;
+  }
+
+  .dark-mode-toggle {
+      margin-left: 75%;
+  }
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+  .hero {
+      min-height: 80vh;
+  }
+  
+  .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      width: 90%;
+      max-width: 98rem;
+  }
+  
+  .content-col h1 {
+      font-size: 6.5rem;
+  }
+  
+  .cta-group {
+      margin-top: 3rem;
+  }
+  
+  .brands-section {
+      margin-top: 6rem;
+  }
+  
+  .image-col {
+      display: flex;
+      justify-content: flex-end;
+  }
+}

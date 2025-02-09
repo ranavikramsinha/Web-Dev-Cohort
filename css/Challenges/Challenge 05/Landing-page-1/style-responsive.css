@@ -1,0 +1,218 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic Styles */
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    /* Combine a semi-transparent black gradient with your background image */
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("assets/chaigym.png");
+    background-size: cover;
+    background-attachment: fixed; /* Consider removing for mobile optimization */
+    background-repeat: no-repeat;
+    background-position: 50% 38%;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: #333333;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .logo:hover {
+    color: #FF7902;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    color: #FF6B6B;
+    cursor: pointer;
+    text-shadow: 0 2px 4px rgba(255, 107, 107, 0.5);
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0px;
+    color: #ffffff;
+    text-align: center; /* Helps center text on smaller screens */
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 58px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 23px;
+    margin-bottom: 40px;
+  }
+  
+  .cta-button {
+    background-color: #FF7902;
+    border: none;
+    color: #000000;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 70px;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    background-color: #008000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 280px; /* Desktop gap (adjust in media queries) */
+    border: none; /* Debug border to see container edges */
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 95%;   
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 80px 80px;
+  }
+  
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 330px; /* Fixed width of 330px */
+    border: 2px solid #FF7902;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 330px;  /* Ensures the width is 330px */
+    height: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 121, 2, 0.5);
+  }
+  
+  .feature h3 {
+    margin-top: 20px;
+    color: #FF7902;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    color: #dddddd;
+  }
+  
+  /* =========================
+     MEDIA QUERIES
+     ========================= */
+  
+  /* Tablet and below */
+  @media (max-width: 768px) {
+    .features {
+      padding: 30px 20px;
+      gap: 20px;
+    }
+  }
+  
+  /* Mobile and smaller */
+  @media (max-width: 480px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .hero {
+      padding: 40px 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 32px;
+    }
+    
+    .hero-content p {
+      font-size: 16px;
+    }
+    
+    .cta-button {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .features {
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+    
+    /* If you still want the fixed width on mobile, remove these overrides:
+    .feature {
+      width: 330px;
+      max-width: 330px;
+    }
+    */
+  }
+  
+  

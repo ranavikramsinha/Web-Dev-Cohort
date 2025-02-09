@@ -1,0 +1,166 @@
+/* Challenge CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    color: #333333;
+    padding-top: 70px;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+    color: #8B4513;
+    font-size: 25px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .logo:hover{
+    transform: scale(1.1);
+  }
+  
+  .logo img {
+    border-radius: 50%;
+    border: 2px solid #8B4513;
+    padding: 2px;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #8B4513;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-menu a:hover {
+    color: #ff6a00;
+    cursor: pointer;
+  }
+  
+  .hero {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/chaipatti.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 52%;
+    height: 75vh;
+    color: #ffffff;
+    z-index: -1;
+  }
+
+  .hero-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 70px;
+  }
+  
+  .hero-text p {
+    font-size: 24px;
+    color: #dddddd;
+  }
+  
+  .shop-button {
+    border: none;
+    background-color: #8B4513;
+    color: #ffffff;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .shop-button:hover {
+    background-color: #ff6a00;
+    transform: scale(1.1);
+  }
+  
+  .tea-collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+    margin-top: 20px;
+  }
+  
+  .tea-collection h2 {
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #8B4513;
+  }
+  
+  .tea-cards {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    gap:  50px 125px;
+  }
+  
+  .tea-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    flex-wrap: wrap;
+    width: 350px;
+    transition: all 0.2s ease-in-out;
+    gap: 10px;
+  }
+
+  .tea-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tea-card h3 {
+    color: #8B4513;
+  }
+  
+  .tea-card p {
+    text-align: center;
+    color: #6f6f6f;
+  }
+  

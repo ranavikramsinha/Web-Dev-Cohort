@@ -1,0 +1,145 @@
+/* Challenge CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styles */
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    /* Combine a semi-transparent black gradient with your background image */
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("assets/chaigym.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 38%;
+    /* overflow-y: hidden; */
+  }
+  
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: #333333;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+
+  .nav-links{
+    display: flex;
+    gap: 50px;
+    /* flex-wrap: wrap; */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    /* transition: all 0.3s ease-in-out; */
+    color: #FF6B6B;
+    cursor: pointer;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 100px;
+    color: #ffffff;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 58px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 23px;
+    margin-bottom: 40px;
+  }
+  
+  .cta-button {
+    background-color: #FF7902;
+    border: none;
+    color: #000000;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 70px;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    background-color: #008000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  /* Features section styles */
+  .features {
+    display: flex;
+    border: none;
+    border-radius: 40px;
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 1800px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+
+  }
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid #FF7902;
+    width: 350px;
+    height: 180px;
+    border-radius: 15px;
+  }
+  
+  .feature h3 {
+    color: #FF7902;
+  }
+  
+  .feature p {
+    color: #dddddd;
+  }
+  

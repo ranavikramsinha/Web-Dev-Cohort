@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form, Video and Canvas</title>
+  <style>
+    canvas {
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required placeholder="Enter your email">
+
+    <br>
+    <br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" name="dob" id="dob">
+
+    <br>
+    <br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" name="color" id="color">
+
+    <br>
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <br>
+  <br>
+
+  <video muted controls width="500" poster="./goat.jpg">
+    <source src="./ayanogoat.mp4" type="video/mp4">
+  </video>
+ 
+  <br>
+  <br>
+
+  <canvas id="myCanvas" width="400" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const shape = canvas.getContext("2d");
+
+    shape.fillStyle = "blue";
+    shape.fillRect(50, 50, 300, 100);
+  </script>
+</body>
+</html>

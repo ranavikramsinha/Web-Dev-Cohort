@@ -1,0 +1,229 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    background-color: #1A1A1A;
+    color: #ffffff;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+    color: #00ff9d;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .logo img {
+    border-radius: 50%;
+    border: 2px solid #00FF9D;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .menu a:hover {
+    color: #FF6B6B;
+    cursor: pointer;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("assets/chaicohort.png");
+    background-size: 2000px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 95%;
+    height: 600px;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 42.5px;
+    color: #00FF9D;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    color: #dddddd;
+  }
+  
+  .hero-content img {
+    border: 1px solid #00FF9D;
+    border-radius: 7.5px;
+  }
+  
+  .enroll-button {
+    border: none;
+    background-color: #00FF9D;
+    color: #000000;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .enroll-button:hover {
+    background-color: #00e68a; /* A slightly darker shade */
+    transform: scale(1.05);
+  }
+  
+  /* Highlights section styles */
+  .highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+    padding: 30px 100px;
+  }
+  
+  .highlight-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background-color: #2A2A2A;
+    flex-wrap: wrap;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .highlight-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .highlight-card h3 {
+    color: #00FF9D;
+  }
+  
+  .highlight-card p {
+    color: #dddddd;
+  }
+  
+  /* Responsive Styles */
+  
+  /* For devices with width up to 1524px */
+  @media screen and (max-width: 1524px) {
+    .navbar {
+      padding: 20px 50px;
+    }
+    
+    .highlights {
+      padding: 30px 50px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    
+    .hero {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  /* For devices with width up to 768px */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 30px;
+    }
+    
+    .menu {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .hero {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 32px;
+    }
+    
+    .hero-content p {
+      font-size: 16px;
+    }
+    
+    .highlights {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 30px;
+    }
+    
+    .highlight-card {
+      width: 100%;
+    }
+  }
+  
+  /* For devices with width up to 480px */
+  @media screen and (max-width: 480px) {
+    .navbar {
+      padding: 15px 20px;
+    }
+    
+    .logo {
+      font-size: 18px;
+    }
+    
+    .hero-content h1 {
+      font-size: 28px;
+    }
+    
+    .hero-content p {
+      font-size: 14px;
+    }
+    
+    .enroll-button {
+      padding: 10px 30px;
+      font-size: 14px;
+    }
+  }
+  

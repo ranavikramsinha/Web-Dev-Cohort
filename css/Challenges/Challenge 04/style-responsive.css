@@ -1,0 +1,289 @@
+/* Challenge CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #FF6B6B;
+    font-size: 45px;
+}
+
+.subtitle {
+    color: #888888;
+    font-size: 16.5px;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 30px 0;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 22.5px;
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    gap: 25px;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+.warrior .popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFD93D;
+    border-radius: 20px;
+    padding: 5px 0px;
+    white-space: nowrap;
+    width: 160px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 125px;
+    min-width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 40px;
+    color: #FF6B6B;
+}
+
+.period {
+    color: #888888;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 20px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.features li {
+    list-style-type: none;
+    text-align: left;
+    width: 100%;
+    color: #D6D5D5;
+    font-size: 15px;
+}
+
+.features li.disabled {
+    opacity: 0.5;
+}
+
+.join-btn {
+    border: 2px solid #FF6B6B;
+    border-radius: 12.5px;
+    padding: 15px 50px;
+    font-size: 15px;
+    background-color: #262626;
+    color: #FF6B6B;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.join-btn:hover {
+    background-color: #FF6B6B;
+    color: #262626;
+    cursor: pointer;
+}
+
+.warrior .join-btn {
+    background-color: #262626;
+}
+
+.warrior .join-btn:hover {
+    background-color: #FF6B6B;
+    color: #262626;
+}
+
+.champion .join-btn {
+    background-color: #312D1D;
+    color: #FFD93D;
+    border: 2px solid #FFD93D;
+    padding: 15px 65px;
+}
+
+.champion .join-btn:hover {
+    background-color: #FFD93D;
+    color: #312D1D;
+    border-color: #FFD93D;
+}
+
+/* Custom Class Modifiers */
+.beginner {
+    background-color: #262626;
+    border: 1px solid #383838;
+}
+
+.warrior {
+    background-color: #312222;
+    border: 1px solid #FF6B6B;
+}
+
+.champion {
+    background-color: #312D1D;
+    border: 1px solid #FFD93D;
+}
+
+.beginner .price-block {
+    background-color: #303030;
+}
+
+.warrior .price-block {
+    background-color: #3C2D2D;
+}
+
+.champion .price-block {
+    background-color: #3C3829;
+}
+
+.champion .price {
+    color: #FFD93D;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-container {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .pricing-container {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .features {
+        padding: 0 15px;
+    }
+    
+    .join-btn {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .pricing-container {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .price {
+        font-size: 35px;
+    }
+
+    .features {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .join-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

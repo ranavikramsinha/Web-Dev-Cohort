@@ -1,0 +1,226 @@
+/* Challenge CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #FF6B6B;
+    font-size: 45px;
+  }
+  
+  .subtitle {
+    color: #888888;
+    font-size: 16.5px;
+    letter-spacing: 2.5px;
+  }
+
+  .pricing-container div{
+    width: 33.33%;
+  }
+  
+  .pricing-container {
+    display: flex;
+    width: 57%;
+    height: 750px;
+    padding: 30px;
+    gap: 30px;
+    cursor: pointer;
+  }
+  
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 22.5px;
+    position: relative;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .icon {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+
+  .warrior .popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFD93D;
+    border-radius: 20px;
+    padding: 5px 0px;
+    white-space: nowrap;
+    width: 160px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #000000;
+    font-weight: 700;
+  }
+
+  .price-block div{
+    width: auto !important;
+  }
+  
+  .price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px !important;
+    height: 125px !important;
+    min-width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .price {
+    font-weight: 700;
+    font-size: 40px;
+    color: #FF6B6B;
+  }
+  
+  .period {
+    color: #888888;
+  }
+  
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 35px;
+    gap: 30px;
+    margin-bottom: 20px;
+
+  }
+  
+  .features li {
+    list-style-type: none;
+    text-align: left !important;
+    width: 100%;
+    color: #D6D5D5;
+    font-size: 15px;
+  }
+  
+  .features li.disabled {
+    opacity: 0.5;
+  }
+  
+  .join-btn {
+    border: 2px solid #FF6B6B;
+    border-radius: 12.5px;
+    padding: 20px 60px;
+    font-size: 15px;
+    background-color: #262626;
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+  
+  .join-btn:hover {
+    background-color: #FF6B6B;
+    color: #262626;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .warrior .join-btn:hover {
+    background-color: #FF6B6B;
+    color: #262626;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Custom Class Modifiers */
+  .beginner{
+    background-color: #262626;
+    border: 1px solid #383838;
+  }
+
+  .warrior {
+    background-color: #312222;
+    border: 1px solid #FF6B6B;
+  }
+  
+  .champion {
+    background-color: #312D1D;
+    border: 1px solid #FFD93D;
+  }
+
+  .beginner .price-block {
+    background-color: #303030;
+  }
+
+  .warrior .price-block {
+    background-color: #3C2D2D;
+  }
+  
+  .champion .price-block {
+    background-color: #3C3829;
+  }
+
+  .champion .price {
+    color: #FFD93D;
+  }
+
+  .warrior .join-btn{
+    background-color: #312222;
+  }
+  
+  .champion .join-btn {
+    background-color: #312D1D;
+    color: #FFD93D;
+    border: 2px solid #FFD93D;
+    padding: 20px 75px;
+  }
+  
+  .champion .join-btn:hover {
+    background-color: #FFD93D;
+    color: #312D1D;
+    border-color: #FFD93D;
+  }
+
+  .pricing-card, .join-btn {
+    transition: all 0.3s ease;
+  }
+
+  
+  

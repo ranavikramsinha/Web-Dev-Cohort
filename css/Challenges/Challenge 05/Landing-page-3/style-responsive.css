@@ -1,0 +1,257 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    color: #333;
+    /* Add top padding equal to header height so content isn't hidden behind the fixed header */
+    padding-top: 70px;
+  }
+  
+  /* Sticky Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    cursor: pointer;
+    color: #8B4513;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .logo img {
+    border-radius: 50%;
+    border: 2px solid #8B4513;
+    padding: 2px;
+  }
+  
+  /* Navigation Menu */
+  .nav-menu {
+    display: flex;
+    gap: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #8B4513;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .nav-menu a:hover {
+    color: #ff6a00;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/chaipatti.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 47%;
+    height: 45vh;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-text h1 {
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .hero-text p {
+    font-size: 24px;
+    color: #dddddd;
+    text-align: center;
+  }
+  
+  /* Shop Button */
+  .shop-button {
+    border: none;
+    background-color: #8B4513;
+    color: #ffffff;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .shop-button:hover {
+    background-color: #ff6a00;
+    transform: scale(1.05);
+  }
+  
+  /* Tea Collection Section */
+  .tea-collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+    margin-top: 20px;
+  }
+  
+  .tea-collection h2 {
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #8B4513;
+  }
+  
+  /* Tea Cards */
+  .tea-cards {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    gap: 50px 125px;
+  }
+  
+  .tea-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .tea-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tea-card h3 {
+    color: #8B4513;
+    margin-bottom: 15px;
+  }
+  
+  .tea-card p {
+    text-align: center;
+    color: #6f6f6f;
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* Large tablets / small laptops (up to 1024px) */
+  @media (max-width: 1024px) {
+    .header {
+      padding: 10px 50px;
+    }
+  
+    .tea-collection {
+      padding: 30px 50px;
+    }
+  }
+  
+  /* Small tablets / large mobile (up to 768px) */
+  @media (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+      padding: 10px 50px;
+      justify-content: space-between;
+    }
+  
+    /* Hide the nav menu by default, show hamburger */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .nav-menu.open {
+      display: flex; /* Show when toggled by JS */
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .hero-text h1 {
+      font-size: 50px;
+    }
+  
+    .hero-text p {
+      font-size: 18px;
+    }
+  
+    .tea-cards {
+      grid-template: auto / repeat(2, 1fr);
+      gap: 30px 50px;
+    }
+  
+    /* Remove fixed attachment (it can be buggy on mobile) */
+    .hero {
+      background-attachment: scroll;
+    }
+  }
+  
+  /* Small mobile (up to 480px) */
+  @media (max-width: 480px) {
+    .header {
+      padding: 10px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .hero-text h1 {
+      font-size: 35px;
+    }
+  
+    .hero-text p {
+      font-size: 16px;
+    }
+  
+    .shop-button {
+      padding: 10px 25px;
+      font-size: 14px;
+    }
+  
+    .tea-cards {
+      grid-template: auto / 1fr;
+      gap: 30px;
+    }
+  }
+  

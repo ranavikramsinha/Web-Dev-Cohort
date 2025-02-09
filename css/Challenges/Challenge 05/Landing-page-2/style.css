@@ -1,0 +1,136 @@
+/* Challenge CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    background-color: #1A1A1A;
+    color: #ffffff;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+    color: #00ff9d;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+    border: 2px solid #00FF9D;
+  }
+
+  .menu {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .menu a:hover {
+    color: #FF6B6B;
+    cursor: pointer;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/chaicohort.png");
+    background-size: 2000px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 95%;
+    height: 600px;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 42.5px;
+    color: #00FF9D;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    color: #dddddd;
+  }
+  
+  .hero-content img {
+    border: 1px solid #00FF9D;
+    border-radius: 7.5px;
+  }
+  
+  .enroll-button {
+    border: none;
+    background-color: #00FF9D;
+    color: #000000;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .enroll-button:hover {
+    background-color: #00e68a; /* A slightly darker shade */
+    transform: scale(1.05);
+  }
+  
+  /* Highlights section styles */
+  .highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+    padding: 30px 100px;
+  }
+  
+  .highlight-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background-color: #2A2A2A;
+    flex-wrap: wrap;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .highlight-card h3 {
+    color: #00FF9D;
+  }
+  
+  .highlight-card p {
+    color: #dddddd;
+  }
+  
