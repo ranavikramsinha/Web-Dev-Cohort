@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum Buttons with Only HTML & CSS</title>
+  <style>
+    .container {
+      counter-reset: total; /* Initialize the counter */
+      margin: 20px;
+      font-family: sans-serif;
+    }
+    /* Hide the checkboxes */
+    input[type="checkbox"] {
+      display: none;
+    }
+    /* Style the labels as buttons */
+    label {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+    }
+    /* When a checkbox is checked, increment the counter in its adjacent label */
+    #btn1:checked + label { counter-increment: total 1; }
+    #btn2:checked + label { counter-increment: total 2; }
+    #btn3:checked + label { counter-increment: total 3; }
+    #btn4:checked + label { counter-increment: total 4; }
+    #btn5:checked + label { counter-increment: total 5; }
+    /* Display the counter value */
+    .result::after {
+      content: counter(total);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Each hidden checkbox is paired with a label that shows the number -->
+    <input type="checkbox" id="btn1">
+    <label for="btn1">1</label>
+    
+    <input type="checkbox" id="btn2">
+    <label for="btn2">2</label>
+    
+    <input type="checkbox" id="btn3">
+    <label for="btn3">3</label>
+    
+    <input type="checkbox" id="btn4">
+    <label for="btn4">4</label>
+    
+    <input type="checkbox" id="btn5">
+    <label for="btn5">5</label>
+    
+    <!-- The total sum is shown here -->
+    <p>Total: <span class="result"></span></p>
+  </div>
+</body>
+</html>
+
+<!--? Here's an updated code that "locks in" a button after it's clicked so that its value is added only once. In this version, once you click a button, its label becomes unclickable (via CSS pointer-events) and appears faded, ensuring that clicking the same button again won’t subtract its value. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum Buttons (No Toggle)</title>
+  <style>
+    .container {
+      counter-reset: total; /* Initialize the counter */
+      margin: 20px;
+      font-family: sans-serif;
+    }
+    /* Hide the checkboxes */
+    input[type="checkbox"] {
+      display: none;
+    }
+    /* Style the labels as buttons */
+    label {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+    }
+    /* When a checkbox is checked, increment the counter in its adjacent label */
+    #btn1:checked + label { counter-increment: total 1; }
+    #btn2:checked + label { counter-increment: total 2; }
+    #btn3:checked + label { counter-increment: total 3; }
+    #btn4:checked + label { counter-increment: total 4; }
+    #btn5:checked + label { counter-increment: total 5; }
+    /* Disable further clicks on a label once its checkbox is checked */
+    input[type="checkbox"]:checked + label {
+      pointer-events: none;
+      opacity: 0.6; /* Visual cue to indicate it's been used */
+    }
+    /* Display the counter value */
+    .result::after {
+      content: counter(total);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="btn1">
+    <label for="btn1">1</label>
+    
+    <input type="checkbox" id="btn2">
+    <label for="btn2">2</label>
+    
+    <input type="checkbox" id="btn3">
+    <label for="btn3">3</label>
+    
+    <input type="checkbox" id="btn4">
+    <label for="btn4">4</label>
+    
+    <input type="checkbox" id="btn5">
+    <label for="btn5">5</label>
+    
+    <p>Total: <span class="result"></span></p>
+  </div>
+</body>
+</html> -->
