@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0;
   let autoPlayActive = false;
-  let autoPlayInterval;
   let timerInterval;
   let autoPlayDuration = 5;
   let countDown = autoPlayDuration;
@@ -123,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function resetAutoPlay() {
     if (autoPlayActive) {
-      clearInterval(autoPlayInterval);
       clearInterval(timerInterval);
       startAutoPlay();
     }
