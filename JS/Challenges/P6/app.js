@@ -7,6 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let lastSecond = -1;
 
+  const clockNumber = document.querySelector(".clock");
+
+  for (let i = 1; i <= 12; i++) {
+    const numberElement = document.createElement("div");
+
+    numberElement.className = "number";
+    numberElement.style.setProperty("--rotation", `${i * 30}deg`);
+    numberElement.innerHTML = `<span>${i}</span>`;
+    clockNumber.appendChild(numberElement);
+  }
+
   function updateClock() {
     const now = new Date();
     const hours = now.getHours();
@@ -21,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
     hourHand.style.transform = `translateX(-50%) rotate(${hourRotation}deg)`;
     minuteHand.style.transform = `translateX(-50%) rotate(${minuteRotation}deg)`;
 
-    if(seconds === 0 && lastSecond === 59){
-        secondHand.style.transition = "none";
-    }
-    else{
-        secondHand.style.transition = "transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44)"
+    if (seconds === 0 && lastSecond === 59) {
+      secondHand.style.transition = "none";
+    } else {
+      secondHand.style.transition =
+        "transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44)";
     }
 
     secondHand.style.transform = `translateX(-50%) rotate(${secondRotation}deg)`;
@@ -45,11 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const month = now.getMonth() + 1;
     const year = now.getFullYear();
 
-    const formattedDate = String(day).padStart(2, "0") + "/" + String(month).padStart(2, "0") + "/" + year;
+    const formattedDate =
+      String(day).padStart(2, "0") +
+      "/" +
+      String(month).padStart(2, "0") +
+      "/" +
+      year;
 
     dateDisplay.textContent = formattedDate;
     dateDisplay.style.textAlign = "center";
-    dateDisplay.style.fontSize = "30px"
+    dateDisplay.style.fontSize = "30px";
 
     requestAnimationFrame(updateClock);
   }
