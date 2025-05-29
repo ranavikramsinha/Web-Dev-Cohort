@@ -4,7 +4,7 @@ export function App() {
   const [message, setMessage] = useState("Loading...");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api")
+    fetch("/api")
       .then((res) => {
         console.log("Fetch status:", res.status, res.statusText);
         return res.json();
