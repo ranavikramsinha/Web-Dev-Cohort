@@ -1,12 +1,15 @@
-// backend/server.js
-const express = require("express");
-const cors = require("cors");
-const app = express();
-app.use(cors());
+//* server.js
+
+import express from "express";
+import cors    from "cors";
+
+const app  = express();
 const PORT = 5000;
 
-app.get('/api', (req, res) => {
-  res.json({ Message: 'Hello from your API!' });
+app.use(cors());
+
+app.get("/api", (req, res) => {
+  res.json({ Message: "Hello from your API!" });
 });
 
 app.listen(PORT, () => {

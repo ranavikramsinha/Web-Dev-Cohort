@@ -22,7 +22,7 @@ export function App() {
   return (
     <div>
       <h1>Games List of 2025</h1>
-      <p>This is a list of games that released orwill be released in 2025</p>
+      <p>This is a list of games that released or will be released in 2025</p>
       <h2>{message}</h2>
     </div>
   );
