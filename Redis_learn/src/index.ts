@@ -1,8 +1,30 @@
 import express from "express";
 import axios from "axios";
 import Redis from "ioredis";
+import http from "http";
+import { Server } from "socket.io";
 
-const app = express();
+const app = express(); //* Express Server
+
+const state = new Array(1000).fill(false);
+
+const httpServer = http.createServer(app); //* Http Server (Express Server mount on http)
+const io = new Server(); //* Socket Server
+
+io.attach(httpServer);
+
+io.on("connection", (socket) => {
+  console.log(`Socket Connect ${socket.id}`);
+  socket.on("message", (msg) => {
+    io.emit('server-message', msg); //* Broadcast to all the connected clients 
+  });
+
+  socket.on("checkbox-update", (data) => {
+    state[data.index] = data.value;
+    io.emit("checkbox-update", data);
+  })
+});
+
 const PORT = process.env.PORT ?? 8800;
 
 // interface CacheStore {
@@ -19,23 +41,29 @@ const redis = new Redis({ host: "localhost", port: Number(6379) });
 // redis.lpush('video-queue', 'video-url-2')
 // redis.lpush('video-queue', 'video-url-3')
 
+app.use(express.static("./public"));
+
 app.use(async function (req, res, next) {
   const key = `rate-limit`; // global rate limiting
   // const key = `rate-limit:${_id}`; // rate limiting per user
   const value = await redis.get(key);
 
-  if(value === null){
+  if (value === null) {
     await redis.set(key, 0);
     await redis.expire(key, 60);
   }
-  
-  if (Number(value) > 10) {
+
+  if (Number(value) > 100) {
     return res.status(429).json({ message: "Too many request" });
   }
 
   redis.incr(key);
   next();
 });
+
+app.get('/state', (req, res) => {
+  return res.json({ state });
+})
 
 app.get("/", (req, res) => {
   return res.json({ status: "success" });
@@ -84,7 +112,11 @@ app.get("/books/total", async (req, res) => {
   return res.json({ totalPageCount });
 });
 
-app.listen(PORT, () => console.log(`Server is running at PORT: ${PORT}`));
+// app.listen(PORT, () => console.log(`Server is running at PORT: ${PORT}`));
+
+httpServer.listen(PORT, () =>
+  console.log(`HTTP Server is running on PORT: ${PORT}`)
+);
 
 //* NOTE (for checking redis) :-
 //* export PORT=8000 && pnpm dev

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sockets</title>
+  </head>
+  <body>
+    <!-- <div>
+      <div>
+        <input
+          type="text"
+          name="message-input"
+          id="message-input"
+          placeholder="Type your message"
+        />
+        <button id="send-btn">Send</button>
+      </div>
+      <div class="messages">
+        <ul id="messages-container">
+          <li>Hello</li>
+        </ul>
+      </div>
+    </div> -->
+
+    <div id="checkbox-container"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const checkboxes = new Array(1000).fill(false);
+      const checkBoxContainer = document.getElementById("checkbox-container");
+
+      checkboxes.forEach((checkbox, i) => {
+        const input = document.createElement("input");
+        input.setAttribute("type", "checkbox");
+        input.id = `input:-${i}`;
+        input.addEventListener("change", (e) => {
+          console.log(input.checked);
+          socket.emit("checkbox-update", { index: i, value: input.checked });
+        });
+        checkBoxContainer.append(input);
+      });
+
+      const socket = io(); // connects to the backent over websocket
+      const messageContainer = document.getElementById("messages-container");
+
+      async function stateUpdate() {
+        const resp = await fetch("/state", {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        const _json = await resp.json();
+
+        if(_json.state){
+          _json.state.forEach((e, index) => {
+            const el = document.getElementById(`input:-${index}`);
+            el.checked = e;
+          })
+        }
+
+        console.log({ _json });
+      }
+
+      socket.on("checkbox-update", ({ index, value }) => {
+        stateUpdate();
+      });
+
+      socket.on("server-message", (msg) => {
+        const li = document.createElement("li");
+        li.innerText = msg;
+        messageContainer.appendChild(li);
+      });
+
+      // const messageInput = document.getElementById("message-input");
+      // const sendButton = document.getElementById("send-btn");
+
+      // sendButton.addEventListener("click", () => {
+      //   const msg = messageInput.value;
+
+      //   socket.emit("message", msg);
+      // });
+
+      stateUpdate();
+    </script>
+  </body>
+</html>
